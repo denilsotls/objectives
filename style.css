@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root {
+
+    --glass: rgba(255,255,255,0.08);
+
+    --border: rgba(255,255,255,0.18);
+
+    --white: rgba(255,255,255,0.92);
+
+    --text-soft: rgba(255,255,255,0.65);
+}
+
+/* 🌌 BODY */
+body {
+
+    margin: 0;
+
+    font-family: 'Inter', sans-serif;
+
+    color: var(--white);
+
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+}
+
+/* ✨ LUZ */
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(120,170,255,0.10);
+
+    filter: blur(120px);
+
+    top: -180px;
+    right: -120px;
+
+    z-index: -1;
+}
+
+/* 📦 CONTAINER */
+.conteudo-principal {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* 🌊 BOTÕES */
+.botoes {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    margin-bottom: 25px;
+}
+
+/* 🫧 BOTÃO */
+.botao {
+
+    font-family: 'Inter', sans-serif;
+
+    background: var(--glass);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid var(--border);
+
+    color: var(--white);
+
+    padding: 16px 30px;
+
+    border-radius: 999px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .35s ease;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.10),
+        0 4px 20px rgba(0,0,0,0.12);
+}
+
+/* ✨ HOVER */
+.botao:hover {
+
+    transform:
+        translateY(-2px)
+        scale(1.02);
+
+    background: rgba(255,255,255,0.14);
+}
+
+/* 🌟 ATIVO */
+.botao.ativo {
+
+    background: rgba(255,255,255,0.18);
+}
+
+/* 📦 CARD */
+.abas-textos {
+
+    width: 100%;
+
+    max-width: 920px;
+
+    background: rgba(255,255,255,0.07);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    border-radius: 40px;
+
+    padding: 40px;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.08),
+        0 10px 40px rgba(0,0,0,0.20);
+
+    display: flex;
+
+    justify-content: center;
+}
+
+/* ABAS */
+.aba-conteudo {
+
+    display: none;
+
+    width: 100%;
+}
+
+.aba-conteudo.ativo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+/* 🏷️ TÍTULO */
+.aba-conteudo-titulo-principal {
+
+    text-align: center;
+
+    font-size: 52px;
+
+    font-weight: 700;
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 15px;
+}
+
+/* SUBTÍTULO */
+.aba-conteudo-titulo-secundario {
+
+    text-align: center;
+
+    color: var(--text-soft);
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+
+    margin-bottom: 40px;
+}
+
+/* ⏳ CONTADOR */
+.contador {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+/* 🧊 CARD NÚMERO */
+.contador-digito {
+
+    width: 150px;
+
+    height: 170px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(12px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.08);
+}
+
+/* 🔢 NÚMEROS */
+.contador-digito-numero {
+
+    font-size: 68px;
+
+    font-weight: 300;
+
+    margin: 0;
+
+    letter-spacing: -4px;
+}
+
+/* 📝 TEXTO */
+.contador-digito-texto {
+
+    margin-top: 10px;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+/* 🌍 MAPA */
+
+.mapa-section{
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 120px 20px;
+
+    position: relative;
+
+    opacity: 0;
+
+    transform: translateY(120px);
+
+    transition:
+
+        opacity 1.2s ease,
+
+        transform 1.2s ease;
+}
+
+/* TÍTULO */
+
+.mapa-titulo{
+
+    font-size: 52px;
+
+    margin-bottom: 80px;
+
+    text-align: center;
+
+    color: white;
+
+    letter-spacing: -2px;
+}
+
+/* CONTAINER */
+
+.mapa-container{
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    position: relative;
+}
+
+/* IMAGEM */
+
+.mapa-imagem{
+
+    width: 100%;
+
+    opacity: 0.9;
+
+    filter:
+        brightness(0.9)
+        contrast(1.1);
+}
+
+.mapa-section.aparecer{
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+/* 🌍 MAPA CONTAINER */
+
+.mapa-container{
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    position: relative;
+}
+
+/* 🗺️ IMAGEM */
+
+.mapa-imagem{
+
+    width: 100%;
+
+    opacity: 0.9;
+
+    filter:
+        brightness(0.9)
+        contrast(1.1);
+}
+
+/* ✨ PONTOS */
+
+.ponto{
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #63b8fa;
+
+    position: absolute;
+
+    box-shadow:
+        0 0 30px #7cc6ff,
+        0 0 40px #7cc6ff;
+
+    animation: pulse 2s infinite;
+}
+
+/* 🇵🇹 PORTUGAL */
+
+.portugal{
+
+    top: 25%;
+    left: 45%;
+}
+
+/* 🇳🇱 HOLANDA */
+
+.holanda{
+
+    top: 18%;
+    left: 48%;
+}
+
+/* 🇭🇺 HUNGRIA */
+
+.londres{
+
+    top: 18%;
+    left: 46.5%;
+}
+
+.italia{
+    top: 23%;
+    left: 50%;
+}
+/* 🌊 PULSAR */
+
+@keyframes pulse{
+
+    0%{
+
+        transform: scale(1);
+
+        opacity: 1;
+    }
+
+    50%{
+
+        transform: scale(1.3);
+
+        opacity: 0.7;
+    }
+
+    100%{
+
+        transform: scale(1);
+
+        opacity: 1;
+    }
+}
+
+/* ✨ SVG */
+
+.rotas{
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+
+/* ✨ ANIMAÇÃO */
+
+@keyframes desenharLinha{
+
+    to{
+
+        stroke-dashoffset: 0;
+    }
+}
+/* 🌌 FUNDOS */
+
+.fundo{
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -10;
+
+    transition:
+
+        opacity 1s ease;
+}
+
+/* 🌄 PRIMEIRO FUNDO */
+
+.fundo-hero{
+
+    background-image:
+    linear-gradient(
+        rgba(7,17,32,0.45),
+        rgba(7,17,32,0.65)
+    ),
+    url("img/port.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    opacity: 1;
+}
+
+/* 🌌 SEGUNDO FUNDO */
+
+.fundo-mapa{
+
+    background:
+    linear-gradient(
+        180deg,
+        #02050a,
+        #000000
+    );
+
+    opacity: 0;
+}
+/* 🌍 PONTO */
+
+.ponto{
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #7cc6ff;
+
+    position: absolute;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px #7cc6ff,
+        0 0 40px #7cc6ff;
+
+    animation: pulse 2s infinite;
+
+    transition:
+        transform .3s ease;
+}
+
+/* ✨ HOVER */
+
+.ponto:hover{
+
+    transform: scale(1.2);
+}
+
+/* 🫧 TOOLTIP */
+
+.tooltip{
+
+    position: absolute;
+
+    bottom: 180%;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(10px);
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.10);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        all .35s ease;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* 🌟 APARECER */
+
+.ponto:hover .tooltip{
+
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+/* 📱 MOBILE */
+@media screen and (max-width: 768px) {
+
+    body{
+
+        overflow-y: auto;
+
+        height: auto;
+    }
+
+    .conteudo-principal{
+
+        height: auto;
+
+        padding: 40px 20px;
+    }
+
+    .aba-conteudo-titulo-principal {
+
+        font-size: 38px;
+    }
+
+    .contador-digito {
+
+        width: 120px;
+
+        height: 140px;
+    }
+
+    .contador-digito-numero {
+
+        font-size: 52px;
+    }
+
+    .botao {
+
+        width: 100%;
+    }
+}
